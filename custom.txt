@@ -1,0 +1,23 @@
+db.orders.aggregate( [
+   {
+      $lookup: {
+         from: "items",
+         localField: "item",    // field in the orders collection
+         foreignField: "item",  // field in the items collection
+         as: "fromItems"
+      }
+   },
+   {
+      $replaceRoot: { newRoot: { $mergeObjects: [ { $arrayElemAt: [ "$fromItems", 0 ] }, "$$ROOT" ] } }
+   },
+   { $project: { fromItems: 0 } }
+] )
+
+
+to delete a document
+db.games.deleteOne({name:"Snake"})
+
+db.collection.drop()
+
+db.coll.remove({name: "Max"})
+db.coll.remove({name: "Max"}, {justOne: true})

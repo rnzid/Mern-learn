@@ -1,0 +1,26 @@
+/* git init //ibitialize git create git folder
+
+git remove add origin 
+<github url>
+
+git status
+
+git add
+
+git add .
+
+git commit -m "messege"
+ git branch// local branch
+ git branch -r // remote branch
+
+ new branch -b <new branch>
+
+
+git restore --staged <filename>
+
+
+
+
+
+
+*/
